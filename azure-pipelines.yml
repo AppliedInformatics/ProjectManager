@@ -1,0 +1,58 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+jobs:
+
+- job: Frontend
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Node.js'
+
+  - script: |
+      cd ProjectManager/ClientApp
+      npm install -g @angular/cli
+      npm install
+      ng build --prod
+    displayName: 'Angular'
+
+  - task: PublishBuildArtifacts@1    
+    displayName: 'Publish'
+    inputs:
+      pathtoPublish: './ProjectManager/ClientApp/dist'
+      artifactName: 'web_app'
+
+- job: Api_full
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+
+  - task: DotNetCoreCLI@2
+    inputs:
+        command: test
+        projects: 'ProjectManager/ProjectManagerTests'
+        arguments: --logger trx
+        publishTestResults: true
+    displayName: 'Test'
+
+  - script: |
+      cd ProjectManager
+      dotnet publish -c Release --output "./publish"
+    displayName: 'Publish'
+
+  - task: PublishBuildArtifacts@1    
+    displayName: 'Upload'
+    inputs:
+      pathtoPublish: './ProjectManager/publish'
+      artifactName: 'webapi'
