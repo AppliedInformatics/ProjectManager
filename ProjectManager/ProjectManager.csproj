@@ -5,9 +5,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-	  <PublishTrimmed>true</PublishTrimmed>
-	  <PublishReadyToRun>true</PublishReadyToRun>
-	  <PublishSingleFile>true</PublishSingleFile>
+	
     <SpaRoot>ClientApp\</SpaRoot>
 	  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
