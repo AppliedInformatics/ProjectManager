@@ -5,8 +5,11 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
+	  <PublishTrimmed>true</PublishTrimmed>
+	  <PublishReadyToRun>true</PublishReadyToRun>
+	  <PublishSingleFile>true</PublishSingleFile>
     <SpaRoot>ClientApp\</SpaRoot>
-	  <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
+	  <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
     <!-- Set this to true if you enable server-side prerendering -->
