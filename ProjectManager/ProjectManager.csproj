@@ -9,7 +9,7 @@
 	  <PublishReadyToRun>true</PublishReadyToRun>
 	  <PublishSingleFile>true</PublishSingleFile>
     <SpaRoot>ClientApp\</SpaRoot>
-	  <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+	  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
     <!-- Set this to true if you enable server-side prerendering -->
