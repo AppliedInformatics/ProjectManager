@@ -10,7 +10,7 @@ jobs:
 
 - job: Frontend
   pool:
-    vmImage: 'windows-latest'
+    vmImage: 'ubuntu-latest'
 
   steps:
 
@@ -34,7 +34,7 @@ jobs:
 
 - job: Api_full
   pool:
-    vmImage: 'ubuntu-latest'
+    vmImage: 'windows-latest'
 
   steps:
 
