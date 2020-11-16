@@ -34,7 +34,7 @@ jobs:
 
 - job: Api_full
   pool:
-    vmImage: 'windows-latest'
+    vmImage: 'ubuntu-latest'
 
   steps:
 
@@ -48,11 +48,11 @@ jobs:
 
   - script: |
       cd ProjectManager
-      dotnet publish -c Release --output "./publish"
+      dotnet publish -c Release --output "./publish" -r win10-x64
     displayName: 'Publish'
 
   - task: PublishBuildArtifacts@1    
     displayName: 'Upload'
     inputs:
-      pathtoPublish: './ProjectManager/publish'
+      pathtoPublish: './ProjectManager/publish' 
       artifactName: 'webapi'
